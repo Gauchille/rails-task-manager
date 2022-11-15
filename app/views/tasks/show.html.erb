@@ -1,9 +1,15 @@
-<h2><%= @task.title %></h2>
-<p><%= @task.details %></p>
-<% if @task.completed %>
-  <p>this task is completed</p>
-<% else %>
-  <p>this task is not completed yet</p>
-<% end %>
-<%= link_to "back to the list", tasks_path %>
-<%= link_to "edit the task", edit_task_path(@task) %>
+<div class="container m-3">
+  <div class="card p-3">
+    <h2><%= @task.title %></h2>
+    <p><%= @task.details %></p>
+    <% if @task.completed %>
+      <p>this task is completed</p>
+    <% else %>
+      <p>this task is not completed yet</p>
+    <% end %>
+    <div class="d-flex">
+      <%= link_to "back to the list", tasks_path, :class => "btn btn-primary m-2"%>
+      <%= link_to "edit the task", edit_task_path(@task), :class => "btn btn-outline-secondary m-2" %>
+   </div>
+  </div>
+</div>
